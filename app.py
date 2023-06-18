@@ -1,17 +1,8 @@
-"""App"""
-from flask import Flask, render_template
+from flask import Flask
 
 app = Flask(__name__)
-
-
-@app.route("/")
+@app.route('/')
 def index():
-    """Index"""
-    return render_template("index.html")
-
-
-@app.route("/hello/")
-@app.route("/hello/<name>")
-def hello(name=None):
-    """Hello"""
-    return render_template("hello.html", name=name)
+    return '<h1>Hello WSB! Greetings from Flask & Docker!</h1>'
+if __name__ == "__main__":
+    app.run(debug=True)

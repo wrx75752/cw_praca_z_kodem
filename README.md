@@ -88,3 +88,43 @@ WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
 Press CTRL+C to quit
 ```
+
+# Ćwiczenie 3
+
+## Z 3
+CI/CD (Continuous Integration/Continuous Delivery) to metodyka i zestaw praktyk, które pozwalają na częstsze, bezpieczne i automatyzowane dostarczanie zmian w kodzie aplikacji. CI/CD jest częścią metodyki DevOps i ma na celu zwiększenie częstotliwości wysyłania zmian, minimalizację błędów, zwiększenie jakości tworzonego kodu oraz usprawnienie współpracy między programistami a administratorami serwerów. Implementacja CI/CD opiera się na automatyzacji procesu dostarczania zmian, w tym testowania, wdrażania i monitorowania aplikacji.
+
+Korzyści wynikające z CI/CD to:
+
+- Częstsze dostarczanie zmian, co pozwala na szybsze reagowanie na potrzeby użytkowników i zmieniające się wymagania.
+- Minimalizacja błędów dzięki automatycznemu testowaniu i sprawdzaniu zmian w kodzie.
+- Zwiększenie współpracy i jakości kodu poprzez częste wysyłanie zmian, identyfikowanie błędów i konieczność porównywania i łączenia zmian w kodzie.
+
+Przykładem narzędzia do implementacji CI/CD jest GitLab CI, które pozwala na automatyzację procesu budowania, testowania i wdrażania aplikacji opartych na repozytorium Git.
+
+## Z 4
+
+Docker jest otwartą platformą pozwalającą na tworzenie i uruchamianie aplikacji w kontenerach. Kontenery to izolowane środowiska, które zawierają wszystko, co jest potrzebne do uruchomienia aplikacji, włącznie z kodem, zależnościami i systemem operacyjnym. Docker ułatwia tworzenie, dystrybucję i skalowanie aplikacji, ponieważ kontenery są przenośne i działają w dowolnym środowisku.
+
+Składnia i pliki konfiguracyjne obrazu Dockerowego są opisane w pliku Dockerfile. Plik ten zawiera instrukcje, które Docker wykonuje w celu zbudowania obrazu aplikacji. Przykładowy plik Dockerfile może wyglądać tak:
+
+```dockerfile
+FROM python:3.9
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+CMD ["python", "app.py"]
+```
+
+W powyższym przykładzie:
+
+- FROM określa bazowy obraz, na którym budujemy nasz obraz
+- WORKDIR ustawia katalog roboczy wewnątrz kontenera
+- COPY kopiuje pliki z lokalnego systemu do kontenera
+- RUN wykonuje polecenia wewnątrz kontenera
+- CMD definiuje polecenie, które zostanie uruchomione po uruchomieniu kontenera
+
+Dockerfile jest następnie używany do zbudowania obrazu za pomocą polecenia docker build. Obraz można następnie uruchomić jako kontener za pomocą polecenia docker run.
+
+Pipeline w travisie jest skonfigurowany natomiast nie zostanie odpalony bo nie chcę podawać karty i danych 😁
