@@ -126,3 +126,5 @@ W powyższym przykładzie:
 - CMD definiuje polecenie, które zostanie uruchomione po uruchomieniu kontenera
 
 Dockerfile jest następnie używany do zbudowania obrazu za pomocą polecenia docker build. Obraz można następnie uruchomić jako kontener za pomocą polecenia docker run.
+
+Pipeline w travisie jest skonfigurowany natomiast nie zostanie odpalony bo nie chcę podawać karty i danych 😁
